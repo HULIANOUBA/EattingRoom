@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<title></title>
+</head>
+
+<body>
+	<div data-role="page" id="indexPage">
+		<div data-role="header" class="ui-header-fullscreen" id='indexHeader'>
+			<a href="#payPage" id="orderList">已点<span id="topspan"
+				style="padding-left: 5px;">0</span></a>
+			<h1>菜单一览表</h1>
+		</div>
+		<div data-role="content">
+			<div id="tabs" data-role="tabs">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#one">one</a></li>
+						<li><a href="#one">two</a></li>
+						<li><a href="#one">three</a></li>
+					</ul>
+				</div>
+				<div class="ui-grid-b ui-content" id="one">
+
+					<ul class="ui-block-a" id="ul_1">
+					</ul>
+					<ul class="ui-block-b" id="ul_2">
+					</ul>
+					<ul class="ui-block-c" id="ul_3">
+					</ul>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div data-role="page" id="payPage" data-dialog="true">
+		<div data-role="header" id='payPageHeader'>
+			<h1>已点菜单</h1>
+		</div>
+		<div data-role="content" class="ui-content">
+			<ul data-role="listview" id="payList">
+			</ul>
+
+			<h3>
+				总金额 : <span>¥</span><span id='totalPay'>0</span>
+			</h3>
+		</div>
+		<div data-role="footer" data-position="fixed" data-fullscreen="true"
+			id='payPageFooter'>
+			<div style="padding-left: 70%;">
+				<a data-role="button" id="pOrder">下单</a> <a href="#indexPage"
+					data-role="button" id='pCancel'>取消</a>
+			</div>
+			<div data-role="popup" id="myPopup">
+				<p>
+					<strong>请先点餐</strong>
+				</p>
+			</div>
+		</div>
+
+	</div>
+	<div data-role="page" id="orderPage">
+		<div data-role="header" class="ui-header-fullscreen"
+			id='orderPageHeader'>
+			<h2>您的订单</h2>
+		</div>
+		<div data-role="content" class="mContent">
+			<ul class="mUl">
+				<li><strong>订单号：</strong><span id="no"></span></li>
+				<li><strong> 金额：¥</strong><span id="money"></span></li>
+				<li><strong>付款方式：</strong><span id="payType">未付款</span></li>
+			</ul>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-fullscreen="true"
+			id='orderPageFooter'>
+			<div style="padding-left: 80%;">
+				<a data-role="button" id="payOrder">付款</a> <a href="#myPopupDialog"
+					data-rel="popup" data-position-to="window" data-transition="fade"
+					data-role="button" id='payCancel'>取消</a>
+				<div data-role="popup" id="myPopupDialog">
+					<h3 style="text-align: center">确定取消订单吗？</h3>
+					<a class="ui-btn ui-corner-all ui-btn-inline" id='cancelOrder'>确定</a>
+					<a href="#" class="ui-btn ui-corner-all ui-btn-inline" data-rel="back"
+						id='backOrder'>取消</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

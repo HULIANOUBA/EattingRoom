@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.IDessertMapper">
+    <resultMap type="beans.Dessert" id="DessertMap">
+        <id property="id" column="dID" javaType="java.lang.Integer"></id>
+        <result property="name" column="dName" javaType="java.lang.String"></result>
+        <result property="price" column="dPrice" javaType="java.lang.Double"></result>
+        <result property="description" column="fDescription" javaType="java.lang.String"></result>
+        <result property="picurl" column="dPicurl" javaType="java.lang.String"></result>
+    </resultMap>
+    
+    <select id="queryDessert" resultMap="DessertMap">
+        select * from t_desserts
+    </select>
+    <select id="queryNameAndPrice" parameterType="int" resultMap="DessertMap" >
+        select * from t_desserts where dID=#{id}
+    </select>
+</mapper>

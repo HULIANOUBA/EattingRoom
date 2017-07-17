@@ -1,0 +1,87 @@
+li {
+	list-style-type: none;
+	padding-left: 25px;
+}
+
+.span1 {
+	padding-left: 10px;
+	display: inline-block;
+	width: 40%;
+	margin-left: 5px;
+}
+
+.mValue {
+	margin-right: 3px;
+	margin-left: 3px;
+	width: 15px;
+	border: 1px solid #9F79EE;
+}
+
+.spanName {
+	margin-right: 25px;
+}
+
+.mContent {
+	margin-top: 150px;
+	text-align: center;
+}
+
+.mUl {
+	list-style-type: none;
+}
+
+#money {
+	font-weight: bold;
+	color: #EE3B3B;
+}
+
+#payType {
+	font-weight: bold;
+	color: #3A5FCD;
+}
+
+#orderList,
+#pOrder,
+#pCancel,
+#payOrder,
+#payCancel {
+	background-color: #FA8072;
+	color: white;
+}
+
+#indexHeader,
+#payPageHeader,
+#payPageFooter,
+#orderPageFooter,
+#orderPageHeader,
+#cancelOrder,
+#backOrder {
+	background-color: #787878;
+	color: white;
+}
+
+.decrease {
+	background-color: #FA8072;
+}
+
+.increase {
+	background-color: #FA8072;
+}
+
+#indexPage {
+	background-color: #CDBA96;
+	color: #787878;
+}
+
+#orderPage {
+	background-color: #DEB887;
+}
+
+#no {
+	color: white;
+}
+
+#myPopup {
+	background-color: #EE6363;
+	color: white;
+}

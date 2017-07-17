@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.IFoodMapper">
+
+	<resultMap id="foodMap" type="beans.Food">
+		<id property="fID" column="fID" javaType="java.lang.Integer"></id>
+		<result property="fName" column="fName" javaType="java.lang.String"></result>
+		<result property="fPrice" column="fPrice" javaType="java.lang.Double"></result>
+		<result property="fCityID" column="fCityID" javaType="java.lang.Integer"></result>
+		<result property="fDescription" column="fDescription" javaType="java.lang.String"></result>
+		<collection property="cityList" column="cityID" ofType="City"
+			javaType="java.util.ArrayList">
+		</collection>
+	</resultMap>
+	<select id="queryFood" resultMap="foodMap">
+		select * from t_food
+	</select>
+	<select id="queryFoodName" resultType="java.lang.String">
+		select fName from t_food
+	</select>
+	<insert id="insertFood" useGeneratedKeys="true" keyProperty="id">
+		insert into t_food (fName,fPrice,fCityID,fDescription)
+		values(#{name},#{price},#{cityID},#{description})
+	</insert>
+	<select id="queryCityName" parameterType="String" resultType="java.lang.String">
+		select c.cityName from t_city c,t_food f where c.cityID=f.fCityID and
+		f.fName=#{fName}
+	</select>
+
+</mapper>   

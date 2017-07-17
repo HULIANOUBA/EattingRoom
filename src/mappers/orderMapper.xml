@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.IOrderMapper">
+	<resultMap type="beans.Order" id="orderMap">
+		<id property="id" column="oID" javaType="java.lang.Integer"></id>
+		<result property="status" column="oStatus" javaType="java.lang.Integer"></result>
+		<result property="money" column="oMoney" javaType="java.lang.Double"></result>
+		<result property="time" column="oTime" javaType="java.lang.String"></result>
+		<result property="content" column="oContent" javaType="java.lang.String"></result>
+		<result property="no" column="oNo" javaType="java.lang.String"></result>
+	</resultMap>
+	<insert id="insertOrder" parameterType="beans.Order">
+	    insert into t_orderinfo(oStatus,oMoney,oTime,oContent,oNo) values(#{status},#{money},#{time},#{content},#{no})
+	</insert>
+	<delete id="deleteOrder" parameterType="String">
+	    delete from t_orderinfo where oNo=#{no}
+	</delete>
+</mapper>
